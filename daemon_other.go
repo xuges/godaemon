@@ -11,7 +11,7 @@ func startDaemonProcess(name string, args []string, attr *ProcAttr) error {
 	cmd := exec.Command(name, args...)
 	cmd.SysProcAttr = &syscall.SysProcAttr{
 		Setpgid:   true,
-		Pgid:      1,
+		Pgid:      0,
 		Pdeathsig: syscall.Signal(0),
 	}
 
